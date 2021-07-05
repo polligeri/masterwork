@@ -8,7 +8,7 @@ Cél: egy modern, felhasználóbarát időpontfoglaló rendszer a kutyatulajdono
 1.1. Adminisztrátor
 Bejelentkezés után az adminisztrátor minden funkcióhoz és személyes adathoz hozzáfér, jóváhagyhatja a regisztrált vendég időpont foglalását. 
 
-1.2. Regisztrált vendég - tulajdonos
+1.2. Regisztrált vendég (= tulajdonos)
 Bejelentkezés után látja a naptárban foglalható szabad időpontokat kedvence számára és feltételesen le is foglalhatja azt. Az időpont visszaigazolásakor (adminisztrátor által) egy form válik elérhetővé a számára, amit ki kell töltsön az ottartózkodás alatt igényelt szolgáltatásokról stb. (3-as pontban szerepelnek).
 Szerkesztheti személyes adatait és kutyája adatait.
 
