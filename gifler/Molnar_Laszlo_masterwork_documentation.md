@@ -33,6 +33,6 @@ megbízónk ügyfelei tájékoztatást kérhetnek a megbízónk által kiállít
 
 ## 3. Backend funkciók
 ### 3.1. Számlák adatainak feltöltése
-Ezen a végponton keresztül tudja feltölteni a megbízó ügyviteli rendszere a számlák adatait NAV ONLINE 3.0 formátumban
+- Ezen a végponton keresztül tudja feltölteni a megbízó ügyviteli rendszere a számlák adatait NAV ONLINE 3.0 formátumban
 ### 3.2 Kérelem fogadása a lokális ügyviteli rendszerből új ügyfélfiók létrehozására
-Ezen a végponton keresztül kérheti a lokális ügyviteli rendszer új ügyfélfiók létrehozását
+- Ezen a végponton keresztül kérheti a lokális ügyviteli rendszer új ügyfélfiók létrehozását
