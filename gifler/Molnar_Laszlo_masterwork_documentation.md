@@ -4,11 +4,13 @@
 A fejlesztés célja egy olyan weboldal létrehozása, amelyen keresztül szállítmányozással foglalkozó megbízónk saját ügyfeleinek tájékoztatást tud nyújtani a következőkről:
 
 1. _Hírfolyam_
-Tájékoztatás közérdekű hírekről, változásokról (például ünnepi nyitvatartás, költözés bejelentése, új szolgáltatás elindítása, stb.)
-Megjelenési formája: lista rövid szöveges információkkal és egy link-el)
+- Tájékoztatás közérdekű hírekről, változásokról (például ünnepi nyitvatartás, költözés bejelentése, új szolgáltatás elindítása, stb.)
+- Megjelenési formája: lista rövid szöveges információkkal és egy link-el)
 
 2. _Számlázási információ_
-megbízónk ügyfelei tájékoztatást kérhetnek a megbízónk által kiállított számlákról és azok fizetési állapotáról. Az ügyfelek lekérhetik számláikat és azok fizetési állapotát, letölthetik azok képét (hiteles számlamásolat) illetve azok adatait NAV ONLINE 3.0 formátumban.
+- Megbízónk ügyfelei tájékoztatást kérhetnek a megbízónk által kiállított számlákról
+- Az ügyfelek lekérhetik számláikat és azok fizetési állapotát és
+- letölthetik azok képét (hiteles számlamásolat) illetve azok adatait NAV ONLINE 3.0 formátumban.
 
 ## 2. Adatelérés, jogosultsági szintek
 ### 2.1. _Adminisztrátor_
