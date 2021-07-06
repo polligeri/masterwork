@@ -34,7 +34,7 @@ A fejlesztés célja egy olyan weboldal létrehozása, amelyen keresztül száll
 
 
 ## 3. Backend funkciók
-### 3.1. Számlák adatainak feltöltése
+### 3.1. _Számlák adatainak feltöltése_
 - Ezen a végponton keresztül tudja feltölteni a megbízó ügyviteli rendszere a számlák adatait NAV ONLINE 3.0 formátumban
-### 3.2 Kérelem fogadása a lokális ügyviteli rendszerből új ügyfélfiók létrehozására
+### 3.2 _Kérelem fogadása a lokális ügyviteli rendszerből új ügyfélfiók létrehozására_
 - Ezen a végponton keresztül kérheti a lokális ügyviteli rendszer új ügyfélfiók létrehozását
