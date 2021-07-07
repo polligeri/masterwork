@@ -49,10 +49,13 @@ Egy könyvet maximum 1 hónapra lehet kölcsönözni, ami az ügyfél által egy
 - Git
 - Github
 - Docker
-- Markdown
 - Java
 - Gradle
+- RESTful API
 - Spring boot
 - H2 database
 - Flyway
+- Spring Data JPA
+- JUnit 5
 - Mockito
+- Swagger
