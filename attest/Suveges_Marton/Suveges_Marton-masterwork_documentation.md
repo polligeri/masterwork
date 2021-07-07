@@ -35,11 +35,11 @@ Egy könyvet maximum 1 hónapra lehet kölcsönözni, ami az ügyfél által egy
 
 ### 4 Csak könyvtárosok által eléhető funkciók:
 
-- CRUD műveletek minden objektumra (ügyfelekre vonatkozó megkötések nélkül)
+- Létrehozási, olvasási, frissítési és törlési műveletek minden objektumra (ügyfelekre vonatkozó megkötések nélkül)
 - Kölcsönzés lezárása
 
 ### 5 Ügyfelek részére is elérhető funkciók:
 
-- Kölcsönzés indítása (max 1 hónapra)
-- Kölcsönzés meghosszabbítása (kölcsönzésenként egyszer max 1 héttel)
+- Kölcsönzés indítása (maximum 1 hónapra)
+- Kölcsönzés meghosszabbítása (kölcsönzésenként egyszer maximum 1 héttel)
 - Publikus és saját információk olvasása
