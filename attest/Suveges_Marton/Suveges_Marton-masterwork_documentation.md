@@ -4,7 +4,7 @@ Az alkalmazás az alább látható adatstruktúrára épül.
 
 ![adatstruktura](documentation_rss/adatstruktura.png)
 
-TODO:update pic if changed
+[comment]: <> (TODO:update pic if changed)
 
 ### 1 Objektum készítési kényszerek
 
