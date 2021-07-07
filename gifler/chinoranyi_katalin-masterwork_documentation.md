@@ -4,7 +4,11 @@ RentAvan
 A weboldal célja a lakókocsi/lakóautó/kempingautó tulajdonosok összekötése az utazni kívánó felhasználókkal. Jelenleg a piacon van lehetőség lakást bérelni és autót bérelni is nyaralás céljából, de a kettő ötvözetére még nincs.
 
 2. Az oldal felépítése:
-A főoldal egy folyam, ahol a hidetések jelennek meg, ezen kívül van egy bejelentkezési, egy regisztrációs oldal és egy hirdetésfeladási oldal. A regisztrációt követőss bejelentkezés után láthatóvá válik a saját profil. A saját profilon a felhasználó a saját adatait tudja megadni és azokat látja, a hirdető pedig az autójának az adatait és a foglalásait látja.
+    - Főoldal: csak általános információkat tartalmaz az odlallal kapcsolatban
+    - Foglalás: egy folyam, ahol a hidetések jelennek meg
+    - Regisztráció: űrlap, melnyke segítségével a vendég felhasználóvá válhat. A regisztrációhoz kizárólag email cím és jelszó szükséges.
+    - Hirdetni szeretnék: űrlap melnyke segítségével a hirdető tud regisztrálnil. Ezzel a járműve felkerül a folyamba és foglalhatóvá válik. 
+    - Profil: Bejelentkezés után válik elérhetővé, a felhasználó a saját adatait látja, a hirdető pedig az autóját és az arra érkező foglalásokat. 
 
 3. A felhasználók jogosultság szerint:
 - Vendég:
@@ -20,5 +24,4 @@ A főoldal egy folyam, ahol a hidetések jelennek meg, ezen kívül van egy beje
 4. Működése
     A hirető jogosultsággal rendelkező felhasználók létrehozzák a hirdetést autójukról/lakókocsijukról, ezek kikerülnek egy hírfolyamba, ahonnan a regisztrált felhasználók válogatni tudnak és lefoglalni a kívánt járművet.
     Ha egy jármű foglalásra kerül, megjelenik a foglalás a hirdető saját oldalán. 
-
 
