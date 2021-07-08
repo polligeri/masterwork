@@ -1,29 +1,29 @@
-# TripPack - Travel-Planner-App
+# TripPack - Utazás tervező, rendszerező, utazással kapcsolatos élmények barátokkal való megosztására szolgáló applikáció
 
-## Project overview
-The TripPack is an app which helps you to be uptodate with your next trip, you can organize and plan your next adventure and you can also share your experiences with your friends.
+## A projekt
+Ez egy olyan alkalmazás, ami segít egy helyen tárolni a fontos adatokat, információkat a közelgő utazással kapcsolatosan. Egy helyen tudod tárolni az utazáshoz szükséges jegyeket, minden információt a szállásal, autóbérléssel kapcsolatban. Emellett barátokkal megoszthatod utazásoddal kapcsolatos élményeidet, tapasztalataidat.
 
-## Description
-Every registered member has an own profile where they can add every important data about their next trip. They can add their plane/bus/train tickets, the important details about their accomodation.
-The app helps them to find activities and restaurants in that area. And they can also add important advices and experiences about their trip.
+## Alkalmazás működése
+Minden regisztrált felhasználó rendelkezik egy saját profillal, ahova feltölthet magáról adatokat (Név, Profilkép, Utazási szokások). Illetve egy olyan oldallal, ami csak a felhasználó számára lesz elérhető. Itt tudja tárolni azokat a bizalmas adatokat, amiket az utazás során fog használni. (Repülő, vonat, busz vagy egyéb jegyek, fontos információk a szállásról, autóbérlésről, előre lefoglalt kirándulásokról).
+Az alkalmazásban oszthatsz meg információkat, élményeket, tapasztalatokat utazásoddal kapcsolatosan.
 
-## Roles
+## Az alkalmazás felépítése
+- Főoldal, az alkalmazás leírása, keresési lehetőségek
+- Regisztráció
+- Bejelentkezés
+- Profil (mások számára látható adatok)
+- MyPack (privát, adatok eltárolására)
+- Élményeim (posztok írása, szerkesztése, törlése)
+- Posztok (Hírfolyam, keresés, kommentek írása)
 
-# 1. Visitor
-- Can filter by activities and restaurants
+## Szerepek
 
-# 2. Registered user
-- Can have a profile
-- Can add things to their profile:
-- Name, Profile picture
-- 'About next trip' page where they can add their personal information  about their trip (tickets, details about the accomodation reservation - address, date of arrival, date of leaving), private, no one can see it.
-- They can have a public page where they can add the country- city name, the accomodation name, they also can rate their trip and can give advice to their friends
-- They can filter by activities and restaurants
-- Can have friends
+# 1. Látogató
+- Kereshet a felhasználók által megosztott posztok között, helyszín, értékelés, helyi programok, éttermek alapján.
 
-## Main features
-- Registration via email and password
-- Login via username and password
-- Search for activities and restaurants by filters
-- Create own profile with personal information about the trip
-- Share information about their trip with their friends
+# 2. Regisztrált felhasználó
+- Lehet saját profilja
+- Elmentheti az utazással kapcsolatos adatokat
+- Írhat posztokat, amiket szerkeszthet vagy törölhet, értékeléseket küldhet
+- Kommentelhet mások posztjai alá
+- Kereshet mások által megosztott posztok között
