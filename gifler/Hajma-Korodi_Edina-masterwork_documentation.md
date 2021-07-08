@@ -1,33 +1,31 @@
-# FUN4FAMILY - Travel-app
+# FUN4FAMILY - Gyerekbarát helykereső, utazási ötleteket megosztó applikáció
 
 
-## Project overview
+## A projekt áttekintése
+A Fun4Family egy utazási applikáció, ami segít megosztani és megtalálni olyan helyeket amik családok számára megfelelőek.
 
-The Fun4Family is a travel application that will help to share and find places for family activities. 
+## 1. Helyek megosztásának menete a felhasználókkal
 
-## 1. Flow of sharing places with app users
+A regisztrált felhasználók meg tudnak jelölni új helyeket egy térképen és információkat oszthatnak meg róla, mint például leírás a helyről és különböző értékelések. Továbbá kommentelni is tudnak egy-egy helyhez ahol megoszthatják a saját véleményüket. A látogatók (nem regisztrált felhasználók) láthatják a már megjelölt helyeket és keresni tudnak közülük. Meglátogathatják a komment oldalt is ahol elolvashatják a regisztrált felhasználók megjegyzéseit az adott helyről. Bármelyik felhasználó küldhet üzenetet vagy visszajelzést az ügyfélszolgálatnak. A felhasználók visszajelzései megjelennek a főoldalon.
 
-The registered users can pin a place on map and give informations about that place like description, rate and price range. Also can leave comment on pins and share their opinion about that place. Visitors (non registered users) can see the pins on a map and filter them by rate. They can also visit comment page and read the comments. Any user can send a contact form to the admin and give feedback or send message. Feedbacks are shown on the home page.
+## 2. Szerepek
 
-## 2. Roles
-
-**Visitor**
-- Can see pins, comments and filter between pins
-- Can send contact form to the admin
-
-
-**Registered user**
-- Can create new pins
-- Can write comment for pins and edit or delete these comments
-- Can see their pins in different color
-- Can do everything as Visitors can do
+**Látogató**
+- Láthatja a jelöléseket, kommenteket és kereshet a jelölések között
+- Küldhet üzenetet az ügyfélszolgálatnak
 
 
-## 3. Main features
+**Regisztrált felhasználó**
+- Új jelöléseket hozhat létre
+- Kommentet írhat a jelölésekhez és ezeket szerkesztheti illetve törölheti
+- A saját jelöléseit különböző színben láthatja
+- Mindent csinálhat amit a látogató is csinálhat
 
-- Registration via username, email and password
-- Login via username and password
-- Search for pins by filters
-- Pin creation
-- Comment creation / modification / deletion
-- Contact form sending
+
+## 3. Fő tevékenységek
+- Regisztráció felhasználónév, email és jelszó segítségével
+- Bejelentkezés felhasználónév és jelszó segítségével
+- Új helyek megjelölése
+- Keresés a megjelölt helyek között
+- Kommentek írása, szerkesztése és törlése
+- Üzenet küldése az ügyfélszolgálatnak
