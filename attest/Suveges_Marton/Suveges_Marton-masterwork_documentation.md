@@ -1,21 +1,29 @@
 # Könyvtári nyilvántartó alkalmazás
 
-Az alkalmazás az alább látható adatstruktúrára épül.
+### 1. Projekt víziója
+
+A feladat során egy könyvtárak által felhasználható alkalmazást készítek, amellyel nyomon lehet követni az egyes
+könyvtárakhoz tartózó könyveket és felhasználókat REST interfacen keresztül. Az alkalmazás segítségével a felhasználók
+és könyvtárosok kölcsönzési kéréseket tudnak küldeni a szervernek, amely alapján a könyvtáros elő tudja készíteni a
+könyve(ke)t az átvételre. Továbbá a könyvtárosok lekérdezhetik a könyvtárhoz tartozó könyveket és felhasználókat
+többféle szűrési lehetőséggel.
+
+### 2. Alkalmazás felépítése
 
 ![adatstruktura](documentation_rss/adatstruktura.png)
 
 [comment]: <> (TODO:update pic if changed)
 
-### 1. Objektum készítési kényszerek
+### 3. Objektum készítési kényszerek
 
-1.1 Az alkalmazással fel lehet venni szerzőket, könyveket és felhasználókat. Felhasználók lehetnek ügyfelek vagy
+3.1 Az alkalmazással fel lehet venni szerzőket, könyveket és felhasználókat. Felhasználók lehetnek ügyfelek vagy
 könyvtárosok, megfelelő alkalmazásbeli jogkörrel.
 
-1.2 Könyvet csak már létező szerző(k)höz és tulajdonos könyvtárhoz rendelve lehet felvenni.
+3.2 Könyvet csak már létező szerző(k)höz és tulajdonos könyvtárhoz rendelve lehet felvenni.
 
-1.3 Felhasználót csak már létező könyvtárhoz rendelve lehet felvenni.
+3.3 Felhasználót csak már létező könyvtárhoz rendelve lehet felvenni.
 
-### 2. Kölcsönzés funkció leírása
+### 4. Kölcsönzés funkció leírása
 
 A felhasználók ki tudnak kölcsönözni könyveket a könyvtárból, ilyenkor az alkalmazásban a könyvhöz hozzárendeljük azt a
 felhasználót aki kikölcsönözte, valamint megadjuk, hogy meddig tart kölcsönzés.
@@ -26,25 +34,33 @@ A kölcsönzés végét jelző "leaseUntil" mező változtatható.
 
 Amikor visszakerül a könyv, akkor kitöltésre kerül a "returnedAt" mező.
 
-### 3. Kölcsönzésre vonatkózó kényszerek
+### 5. Kölcsönzésre vonatkózó kényszerek
 
 Egy felhasználó maximum 5 könyvet vehet ki egyszerre, valamint nem vehet ki új könyvet amíg van nála lejárt kölcsönzési
 idejű könyv.
 
 Egy könyvet maximum 1 hónapra lehet kölcsönözni, ami az ügyfél által egyszer hosszabbítható meg 1 héttel.
 
-### 4. Csak könyvtárosok által eléhető funkciók:
+### 6. Csak könyvtárosok által eléhető funkciók:
 
 - Létrehozási, olvasási, frissítési és törlési műveletek minden objektumra (ügyfelekre vonatkozó megkötések nélkül)
 - Kölcsönzés lezárása
 
-### 5. Ügyfelek részére is elérhető funkciók:
+### 7. Ügyfelek részére is elérhető funkciók:
 
 - Kölcsönzés indítása (maximum 1 hónapra)
 - Kölcsönzés meghosszabbítása (kölcsönzési recordonként egyszer maximum 1 héttel)
 - Publikus és saját információk olvasása
 
-### 6. Felhasznált technológiák
+### 8. Szűrők
+
+- Szerző szerinti keresés
+- Elérhető könyvek
+- Aktív kölcsönzések könyvtáranként vagy ügyfelenként
+- Lejárt kölcsönzések könyvtáranként vagy ügyfelenként
+- Lezárt kölcsönzések könyvtáranként vagy ügyfelenként
+
+### 9. Felhasznált technológiák
 
 - Git
 - Github
