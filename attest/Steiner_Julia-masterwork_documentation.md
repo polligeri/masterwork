@@ -34,4 +34,4 @@ visszamenőleg.
 
 #### Oktató
 
-Az oktató rögzíti a rendszerben, hogy a gyakorló valóban megjelent-e az órán.
+Az oktató rögzíti a rendszerben, hogy a bejelentkezett gyakorló valóban megjelent-e az órán.
