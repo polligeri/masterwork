@@ -23,6 +23,7 @@ A megrendelés felülten új megrendelések létrehozása, meglévő megrendelé
 A partnerek felületen új partnerek felvitele, meglévő partnerek listázása, meglévő partnerek szerkesztése, törlése.
 
 ## 1.4 Technikai követelmények
-Szabványos REST  API metódusok.
-Adatbázis kezelése Mongoose-zal.
-A frontend megjelenítése React-tel
+- Node.js, express használata backend oldalon
+- Szabványos REST  API metódusok
+- Adatbázis kezelése Mongoose-zal
+- Frontend megjelenítése React-tel
