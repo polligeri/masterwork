@@ -1,0 +1,19 @@
+A megoldandó probléma
+
+Az adatbázis célja egy online könyvesbolt működésének és üzletvitelének dokumentálása. Egy online áruháznál  nagyon fontos hogy lehetővé tegye
+a vásárlók számára a termék-és szolgáltatáskészletének teljes körű böngészhetőségét, megtekinthesse a termékekről készült fotókat, valamint 
+információkat a termékek jellemzőiről, árairól. A könyveknél különösen fontos az olvasók által adott vélemények(book review) láthatóvá tétele az adatbázisban 
+mert a vásárlók jelentős része kíváncsi mások véleményére mielőtt rákkatint a vásárlás gombra. Emellett olyan hagyományos feladatokkal is meg kell birkóznia 
+az adatbázisnak amik termékeket forgalmazó cégeknél általánosak: vásárlók adatainak a kezelése, megrendelések nyilvántartása és kezelése, készlet nyilvántartás.
+
+Felhasználási Módok
+
+Az adatbázis két jól elkülöníthető sémából áll: a egyik séma a termékeket tartalmazza (Book) a másik az eladással és megrendeléssel (Sales) kapcsolatos adatokat tárolja. 
+A termékek séma célja hogy jól átlátható, dinamikus képet nyújtson a vásárlónak az online készletről, árakról, valamint ez tartalmazza a termékinformációkat is leírások, képek,
+vélemények formájában. A Sales séma központi táblája a Customers tábla, mert a vásárlók az a réteg akit kiszolgál az alkalmazás. A megrendelések kezelésén túl az alkalmazás nyilvántartja 
+a munkatársak tevékenységét is a megrendelések feldolgozásában valamint ők azok akik a rendszert kezelik és jogosultságuk lesz módosítani is azt néhány ponton (raktárkészlet pl).
+Egy jól működő online bolt esetében alapvető hogy naprakészen kövesse a rendszer a raktárkészlet változásait és a beérkező megrendeléseket. A rendszer nyilvántartja a rendelések állapotát
+(Orderstatus) így tudjuk hogy az adott megrendelés már teljesítésre került-e, vagyis a vásárló megkapta-e?
+
+
+
