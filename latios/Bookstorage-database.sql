@@ -170,7 +170,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Book].[Publishers]    Script Date: 09/07/2021 19:32:43 ******/
+/****** Object:  Table [Book].[Publishers]    Script Date: 11/07/2021 11:01:55 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -180,6 +180,7 @@ GO
 CREATE TABLE [Book].[Publishers](
 	[PublisherID] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [nvarchar](100) NOT NULL,
+	[PublishedDate] [date] NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[PublisherID] ASC
@@ -226,7 +227,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Book].[Books]    Script Date: 09/07/2021 20:42:51 ******/
+/****** Object:  Table [Book].[Books]    Script Date: 11/07/2021 10:58:11 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -237,12 +238,12 @@ CREATE TABLE [Book].[Books](
 	[BookID] [int] IDENTITY(1,1) NOT NULL,
 	[BookTitle] [nvarchar](255) NOT NULL,
 	[ISBN] [varchar](14) NOT NULL,
-	[PublishedDate] [date] NULL,
 	[ListPrice] [decimal](10, 2) NOT NULL,
 	[TotalPages] [int] NULL,
-	[Rating] [decimal](4, 2) NULL,
 	[AuthorID] [int] NOT NULL,
 	[PublisherID] [int] NOT NULL,
+	[StockInTrade] [int] NULL,
+	[Description] [nvarchar](2000) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[BookID] ASC
@@ -317,38 +318,70 @@ GO
 ALTER TABLE [Book].[Books_Categories] CHECK CONSTRAINT [fk_category]
 GO
 
-
---Create table Book.Stocks--
+--Create Table Book.Reviews--
 
 
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Book].[Stocks]    Script Date: 09/07/2021 21:24:19 ******/
+/****** Object:  Table [Book].[Reviews]    Script Date: 11/07/2021 11:13:54 ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [Book].[Stocks](
-	[StockID] [int] IDENTITY(1,1) NOT NULL,
+CREATE TABLE [Book].[Reviews](
+	[ReviewID] [int] IDENTITY(1,1) NOT NULL,
 	[BookID] [int] NOT NULL,
-	[Quantity] [int] NULL,
+	[ReviewerName] [nvarchar](100) NULL,
+	[Content] [nvarchar](255) NULL,
+	[Rating] [decimal](4, 2) NULL,
 PRIMARY KEY CLUSTERED 
 (
-	[StockID] ASC
+	[ReviewID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [Book].[Stocks]  WITH CHECK ADD  CONSTRAINT [fk_books] FOREIGN KEY([BookID])
+ALTER TABLE [Book].[Reviews]  WITH CHECK ADD  CONSTRAINT [fk_review] FOREIGN KEY([BookID])
 REFERENCES [Book].[Books] ([BookID])
-ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 
-ALTER TABLE [Book].[Stocks] CHECK CONSTRAINT [fk_books]
+ALTER TABLE [Book].[Reviews] CHECK CONSTRAINT [fk_review]
+GO
+
+
+--Create table Book.Photo--
+
+
+USE [Bookstorage]
+GO
+
+/****** Object:  Table [Book].[Photo]    Script Date: 11/07/2021 10:39:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [Book].[Photo](
+	[PhotoID] [int] IDENTITY(1,1) NOT NULL,
+	[BookID] [int] NOT NULL,
+	[PATH] [varchar](300) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PhotoID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [Book].[Photo]  WITH CHECK ADD  CONSTRAINT [fk_book_photo] FOREIGN KEY([BookID])
+REFERENCES [Book].[Books] ([BookID])
+GO
+
+ALTER TABLE [Book].[Photo] CHECK CONSTRAINT [fk_book_photo]
 GO
 
 
@@ -358,7 +391,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Sales].[Customers]    Script Date: 09/07/2021 21:48:08 ******/
+/****** Object:  Table [Sales].[Customers]    Script Date: 11/07/2021 01:07:16 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -371,11 +404,11 @@ CREATE TABLE [Sales].[Customers](
 	[LastName] [nvarchar](100) NOT NULL,
 	[Phone] [varchar](25) NULL,
 	[Email] [varchar](255) NOT NULL,
-	[Country] [nvarchar](60) NOT NULL,
 	[City] [nvarchar](50) NOT NULL,
 	[StateProvince] [nvarchar](50) NOT NULL,
 	[PostalAddress] [nvarchar](100) NOT NULL,
 	[PostalCode] [nvarchar](10) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[CustomerID] ASC
@@ -384,9 +417,9 @@ PRIMARY KEY CLUSTERED
 (
 	[Email] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [unique_phone] UNIQUE NONCLUSTERED 
+ CONSTRAINT [unique_username] UNIQUE NONCLUSTERED 
 (
-	[Phone] ASC
+	[UserName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -401,7 +434,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Sales].[Staffs]    Script Date: 09/07/2021 22:31:23 ******/
+/****** Object:  Table [Sales].[Staffs]    Script Date: 11/07/2021 10:28:37 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -415,7 +448,7 @@ CREATE TABLE [Sales].[Staffs](
 	[Email] [varchar](255) NOT NULL,
 	[Phone] [varchar](25) NOT NULL,
 	[Active] [bit] NOT NULL,
-	--If Active = 1 then staff is active, if Active = 0 then staff is no longer active--
+	[LogonName] [nvarchar](50) NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[StaffID] ASC
@@ -423,6 +456,10 @@ PRIMARY KEY CLUSTERED
  CONSTRAINT [unique_email_staff] UNIQUE NONCLUSTERED 
 (
 	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
+ CONSTRAINT [unique_logon] UNIQUE NONCLUSTERED 
+(
+	[LogonName] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -434,7 +471,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Sales].[Orders]    Script Date: 09/07/2021 23:04:58 ******/
+/****** Object:  Table [Sales].[Orders]    Script Date: 11/07/2021 10:21:02 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -445,11 +482,14 @@ CREATE TABLE [Sales].[Orders](
 	[OrderID] [int] IDENTITY(1,1) NOT NULL,
 	[CustomerID] [int] NOT NULL,
 	[OrderStatus] [tinyint] NOT NULL,
-	--OrdersTatus: 1 = Pending; 2 = Dispatched; 3 = Completed; 4 = Cancelled--
+	--OrderStatus: 1 = Pending; 2 = Processing; 3 = Completed; 4 = Cancelled--
 	[OrderDate] [date] NOT NULL,
-	[DispatchedDate] [date] NOT NULL,
 	[ShippingDate] [date] NOT NULL,
 	[StaffId] [int] NOT NULL,
+	[TotalNum] [int] NULL,
+	[TotalPrice] [decimal](10, 2) NULL,
+	[Delivery] [nvarchar](50) NOT NULL,
+	[Payment] [nvarchar](50) NOT NULL,
 PRIMARY KEY CLUSTERED 
 (
 	[OrderID] ASC
@@ -487,7 +527,7 @@ GO
 USE [Bookstorage]
 GO
 
-/****** Object:  Table [Sales].[OrderItems]    Script Date: 10/07/2021 18:27:19 ******/
+/****** Object:  Table [Sales].[OrderItems]    Script Date: 11/07/2021 02:00:22 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -495,16 +535,15 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [Sales].[OrderItems](
-	[OrderID] [int] IDENTITY(1,1) NOT NULL,
-	[BookItemID] [int] NOT NULL,
+	[OrderItemID] [int] IDENTITY(1,1) NOT NULL,
 	[BookID] [int] NOT NULL,
+	[OrderID] [int] NOT NULL,
 	[Quantity] [int] NOT NULL,
-	[ListPrice] [decimal](10, 2) NOT NULL,
+	[UnitPrice] [decimal](10, 2) NOT NULL,
 	[Discount] [decimal](4, 2) NULL,
 PRIMARY KEY CLUSTERED 
 (
-	[OrderID] ASC,
-	[BookItemID] ASC
+	[OrderItemID] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
@@ -523,13 +562,19 @@ GO
 
 ALTER TABLE [Sales].[OrderItems]  WITH CHECK ADD  CONSTRAINT [fk_orders] FOREIGN KEY([OrderID])
 REFERENCES [Sales].[Orders] ([OrderID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
 GO
 
 ALTER TABLE [Sales].[OrderItems] CHECK CONSTRAINT [fk_orders]
 GO
 
-ALTER TABLE [Sales].[OrderItems]  WITH CHECK ADD CHECK  (([ListPrice]>(0)))
+ALTER TABLE [Sales].[OrderItems]  WITH CHECK ADD CHECK  (([UnitPrice]>(0)))
 GO
+
+
+
+
 
 
 
