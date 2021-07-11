@@ -29,3 +29,19 @@ A regisztrált felhasználók meg tudnak jelölni új helyeket egy térképen é
 - Keresés a megjelölt helyek között
 - Kommentek írása, szerkesztése és törlése
 - Üzenet küldése az ügyfélszolgálatnak
+
+## 4. Technikai követelmények
+
+
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- JSON Web Token
+- Docker
+
+**Frontend**
+- React
+
+**API dokumentáció**
+- OpenAPI/Swagger
